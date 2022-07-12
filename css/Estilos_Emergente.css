@@ -1,0 +1,81 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+body{
+	text-align:center;
+	font-family:Calibri, Arial, "Times New Roman";
+	margin:0;
+}
+
+
+.modal2{
+	width:100%;
+	height:100vh;
+	background:rgba(0,0,0,0.7);	
+	
+	position:absolute;
+	top:0;
+	left:0;
+	
+	display: flex;
+	
+	animation: modal 2s 3s forwards;
+	
+	/*animation-fill-mode: forwards;*/
+	/*animation-delay: 3s;*/
+	
+	visibility:hidden;
+	opacity:0;
+	/* z-index: 1; => Te permite subir nivel de objetos(controles y imagenes) ejm: nivel 1 , 2, 3,4,5*/
+	z-index:9;
+}
+
+.contenido2{
+	margin:auto;
+	width:40%;
+	height:40%;
+	background: white;
+	border-radius: 10px;
+	text-align:center;
+}
+
+#cerrar {
+	display:none;
+	text-align:center;
+
+}
+
+#cerrar + label {
+	position:fixed;
+	/*color: #fff;*/
+	/*font-size:25px;*/
+	z-index:10;
+	/*background: darkred;
+	height:38px;
+	width:38px;*/
+	line-height:600px; /* medidas para subir el control */
+	/*border-radius:50%;*/
+	right: 420px;
+	/*background-image:url(../img/info_icon3.png);*/
+ 	background-position: 2em;
+	cursor: pointer;
+	animation: modal 1s 2s forwards;
+	visibility:hidden;
+	opacity:0;
+    text-align:center;
+}
+
+#cerrar:checked + label, #cerrar:checked ~ .modal2 {
+	display:none;
+
+}
+
+@keyframes modal {
+	100% {
+		visibility:visible;
+		opacity:50;
+		
+	}
+
+}
